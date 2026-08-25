@@ -1,0 +1,95 @@
+{
+    "notebook": "4.2",
+    "task": "Pump Pressure Prediction",
+    "target": "pump_pressure",
+    "problem_type": "regression",
+    "prediction_definition": {
+        "type": "same_timestamp_prediction",
+        "note": "The current target is pump_pressure at the same timestamp as the input features. This notebook does not use a shifted future-horizon target."
+    },
+    "feature_selection": {
+        "method": "CatBoost ablation on chronological validation set",
+        "selected_experiment": "Full Features",
+        "removed_features": []
+    },
+    "model": {
+        "algorithm": "Random Forest",
+        "n_estimators": 400,
+        "max_depth": 20,
+        "min_samples_leaf": 2,
+        "random_seed": 42
+    },
+    "features": [
+        "block_position",
+        "weight_on_bit",
+        "hookload",
+        "slips_set",
+        "rop_depth_hour",
+        "on_bottom",
+        "top_drive_rpm",
+        "top_drive_torque_ft_lbs",
+        "flow_in",
+        "spm_total",
+        "pit_volume_active",
+        "pit_gl_active",
+        "gas_total_units",
+        "trip_volume_active",
+        "trip_gl",
+        "return_flow",
+        "rig_mode",
+        "rockit_on_off",
+        "mwd_inclination",
+        "mwd_azimuth",
+        "mud_temp",
+        "h2s_01",
+        "rig_event_code",
+        "total_depth",
+        "bit_diameter",
+        "bit_rpm",
+        "depth_hole_tvd",
+        "differential_pressure",
+        "downhole_torque",
+        "drill_mode",
+        "year",
+        "month",
+        "day",
+        "hour",
+        "day_of_week"
+    ],
+    "feature_count": 35,
+    "preprocessing": {
+        "method": "median_imputation",
+        "selection_fit_on": "training_data_only",
+        "final_fit_on": "training_plus_validation",
+        "artifact": "pump_pressure_deployment_bundle.pkl"
+    },
+    "evaluation": {
+        "selection_method": "chronological validation set",
+        "final_training_method": "training plus validation",
+        "final_test_method": "chronological untouched test set",
+        "primary_metric": "RMSE",
+        "MAE": 118.1704617484014,
+        "RMSE": 321.64734219900816,
+        "R2": 0.7281126090448103
+    },
+    "data_split": {
+        "strategy": "strict_chronological",
+        "training_rows": 416876,
+        "validation_rows": 91961,
+        "testing_rows": 89872,
+        "training_start": "2020-10-25 12:00:00",
+        "training_end": "2020-12-14 20:00:00",
+        "validation_start": "2020-12-14 21:00:00",
+        "validation_end": "2020-12-25 15:00:00",
+        "testing_start": "2020-12-25 16:00:00",
+        "testing_end": "2021-01-05 11:00:00"
+    },
+    "artifacts": {
+        "model": "pump_pressure_model.pkl",
+        "deployment_bundle": "pump_pressure_deployment_bundle.pkl",
+        "predictions": "pump_pressure_predictions.csv",
+        "model_comparison": "pump_pressure_model_comparison.csv",
+        "metadata": "pump_pressure_model_metadata.json"
+    },
+    "metadata_generated_at": "2026-08-13T12:40:32.983479"
+}
