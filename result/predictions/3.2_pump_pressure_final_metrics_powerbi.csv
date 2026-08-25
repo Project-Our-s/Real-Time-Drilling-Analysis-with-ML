@@ -1,0 +1,4 @@
+Model,Target,Metric,Training,Test
+CatBoost,pump_pressure,MAE,270.2954313137736,214.36430578652985
+CatBoost,pump_pressure,RMSE,543.1042405114157,332.92967668453497
+CatBoost,pump_pressure,R²,0.875930535012228,0.7881468305037602
