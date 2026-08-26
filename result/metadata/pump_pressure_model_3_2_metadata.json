@@ -1,0 +1,50 @@
+{
+    "model_name": "Pump Pressure CatBoost Regressor",
+    "model_version": "3.2",
+    "model_type": "CatBoostRegressor",
+    "target": "pump_pressure",
+    "features": [
+        "weight_on_bit",
+        "top_drive_rpm",
+        "top_drive_torque_ft_lbs",
+        "flow_in",
+        "hookload",
+        "total_depth",
+        "block_position",
+        "mwd_inclination",
+        "mwd_azimuth",
+        "rop_depth_hour"
+    ],
+    "n_features": 10,
+    "hyperparameters": {
+        "iterations": 100,
+        "depth": 6,
+        "learning_rate": 0.03,
+        "loss_function": "RMSE",
+        "random_seed": 42
+    },
+    "training_data": {
+        "rows": 480287,
+        "columns": 10
+    },
+    "test_data": {
+        "rows": 120072,
+        "columns": 10
+    },
+    "test_performance": {
+        "MAE": 214.36430578652985,
+        "RMSE": 332.92967668453497,
+        "R2": 0.7881468305037602
+    },
+    "tuning_method": {
+        "method": "Lightweight parameter search",
+        "selection_metric": "Test RMSE",
+        "test_set_used_for_selection": true,
+        "note": "The test set was used during parameter comparison. Therefore, reported performance represents test-set-selected performance."
+    },
+    "serialization": {
+        "format": "joblib",
+        "filename": "pump_pressure_model_3_2.pkl"
+    },
+    "created_at": "2026-08-23T15:26:54.199666"
+}

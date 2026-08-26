@@ -1,0 +1,33 @@
+{
+    "model_file": "ROP_RandomForest_Tuned_Model.pkl",
+    "model_type": "RandomForestRegressor",
+    "target_variable": "rop_depth_hour",
+    "feature_columns": [
+        "weight_on_bit",
+        "top_drive_rpm",
+        "top_drive_torque_ft_lbs",
+        "bit_rpm",
+        "downhole_torque",
+        "pump_pressure",
+        "differential_pressure",
+        "flow_in",
+        "spm_total",
+        "hookload",
+        "total_depth",
+        "depth_hole_tvd",
+        "bit_diameter",
+        "mwd_inclination",
+        "mwd_azimuth",
+        "mud_temp"
+    ],
+    "number_of_features": 16,
+    "preprocessing": {
+        "imputer": "SimpleImputer",
+        "strategy": "median"
+    },
+    "random_state": 42,
+    "sklearn_version": "1.9.0",
+    "training_samples": 54159,
+    "test_samples": 13540,
+    "metadata_created": "2026-08-23T15:23:44.468094"
+}

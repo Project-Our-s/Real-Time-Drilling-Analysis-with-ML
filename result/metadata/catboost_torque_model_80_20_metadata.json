@@ -2,11 +2,6 @@
     "model": "CatBoostRegressor",
     "model_status": "Final tuned model",
     "split_strategy": "Chronological 80/20",
-    "development_split": {
-        "internal_training": "70%",
-        "internal_validation": "10%",
-        "final_test": "20%"
-    },
     "training_samples": 480287,
     "test_samples": 120072,
     "training_start": "2020-10-25 12:38:00",
@@ -26,15 +21,15 @@
     ],
     "target": "top_drive_torque_ft_lbs",
     "best_parameters": {
-        "depth": 7,
-        "iterations": 685,
-        "l2_leaf_reg": 2.884947944208967,
-        "learning_rate": 0.026867313736068595,
-        "random_strength": 0.6084844859190754
+        "depth": 8,
+        "iterations": 735,
+        "l2_leaf_reg": 13.581985352179869,
+        "learning_rate": 0.06496385739540578,
+        "random_strength": 1.1973169683940732
     },
     "test_metrics": {
-        "MAE": 227.05364568285842,
-        "RMSE": 664.3417656966161,
-        "R2": 0.7681290776530373
+        "MAE": 244.02834840079737,
+        "RMSE": 656.6465605853543,
+        "R2": 0.7734695830295748
     }
 }
